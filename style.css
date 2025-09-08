@@ -1,86 +1,168 @@
-*{
+* {
     padding: 0;
     margin: 0;   
+    box-sizing: border-box;
 }
 
-nav{
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION */
+nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    border-bottom: 1px solid #ccc;
 }
 
-nav .top-left-sider{
+nav .top-left-sider {
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
-nav .blckimg{
+nav .blckimg {
     margin-left: 10px;
 }
 
-/* font {
-   font-family: "Edu NSW ACT Cursive", cursive;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
-h2{
+nav .nav {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* TITLES */
+h2 {
     font-family: "Edu NSW ACT Cursive", cursive;
 }
 
-main .title{
+main .title {
     text-align: center;
-    margin: 50px;
-    
+    margin: 40px 20px;
 }
 
-main .title h1{
+main .title h1 {
     font-family: "Edu NSW ACT Cursive", cursive;
+    font-size: 2rem;
 }
 
-main .title p{
+main .title p {
     font-weight: lighter;
     color: rgb(110, 108, 106);
     padding: 10px;
+    font-size: 1rem;
 }
 
-main .center-section{
+/* CENTER SECTION */
+main .center-section {
     display: flex;
     width: 100%;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Important for responsiveness */
 }
 
 main .center-section .left-side-div,
 main .center-section .center-div,
-main .center-section .right-side-div
-{
+main .center-section .right-side-div {
     border: 1px solid black;
     padding: 20px;
+    flex: 1; /* Flexible width */
+    min-width: 280px; /* Prevents shrinking too much */
 }
 
-main .review-section{
-    padding: 30px;
-
+/* REVIEW SECTION */
+main .review-section {
+    padding: 30px 20px;
 }
 
-main .review-section .rev-secs{
+main .review-section .rev-secs {
     padding: 10px;
     display: flex;
-    justify-content: space-around;
-    gap: 10px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes cards wrap on mobile */
 }
 
 main .review-section .rev-secs .sec-1, 
 main .review-section .rev-secs .sec-2,
-main .review-section .rev-secs .sec-3
-{
+main .review-section .rev-secs .sec-3 {
     border: 1px solid black;
     border-radius: 20px;
-    padding: 10px;
-    height: 150px;
-    width:250px;
-    margin: 20px;
+    padding: 15px;
+    min-height: 150px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
 }
 
-footer{
+/* FOOTER */
+footer {
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+}
+
+/* ----------------------
+   📱 MEDIA QUERIES
+-----------------------*/
+
+/* Tablets */
+@media (max-width: 900px) {
+    nav .nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    main .title h1 {
+        font-size: 1.8rem;
+    }
+
+    main .center-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .center-section > div {
+        width: 90%;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav .nav {
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    main .title h1 {
+        font-size: 1.5rem;
+    }
+
+    main .title p {
+        font-size: 0.9rem;
+    }
+
+    main .review-section .rev-secs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .review-section .rev-secs > div {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
 }
